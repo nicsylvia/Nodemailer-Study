@@ -11,8 +11,6 @@ const port = environmentVariables.port
 const app = express();
 
 DBconnection()
-agenda()
-
 
 app.use(express.json())
 app.use(cors())
