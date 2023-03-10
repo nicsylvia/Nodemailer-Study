@@ -19,6 +19,7 @@ const agenda = new Agenda({
 })
 
 agenda.on("ready", () =>{
+    console.log("")
     console.log("Agenda is connected to DB")
 }).on("error", () =>{
     console.log("An error occured in connecting Agenda")
