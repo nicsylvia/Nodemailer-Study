@@ -1,13 +1,18 @@
 const express = require("express");
 
 const cors = require("cors");
-const environmentVariables = require("./Config/secret");
-const DBconnection = require("./Config/DB");
-
-const app = express();
-DBconnection()
 
 const port = environmentVariables.port
+
+const environmentVariables = require("./Config/secret");
+
+const { DBconnection, agenda } = require("./Config/DB");
+
+const app = express();
+
+DBconnection()
+agenda()
+
 
 app.use(express.json())
 app.use(cors())

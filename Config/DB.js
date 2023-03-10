@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+const Agenda = require("agenda")
+
 const DB_URL = "mongodb://localhost/NodemailerStudy";
 
 const DBconnection = async() =>{
@@ -11,4 +13,8 @@ const DBconnection = async() =>{
     }
 }
 
-module.exports = DBconnection
+const agenda = new Agenda({
+    db: { address: DB_URL, collection: "Agenda" }
+})
+
+module.exports = {DBconnection, agenda }
