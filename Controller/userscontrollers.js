@@ -23,12 +23,20 @@ const NewUsersRegistration = async(req, res) =>{
 
         await transporter.sendMail(welcomeMail, function(error, info){
             if (error) {
-                
+                console.log("")
+                console.log(error)
+                return res.status(500).json({
+                    message: "An error occured in sending Welcome Mail"
+                })
             } else {
-                
+                console.log("")
+                console.log("Email sent: ", info)
+                return res.status(200).json({
+                    message: "Users registered successfully, \n Welcome mail sent to user",
+                    data: users
+                })
             }
         })
-
     } catch (error) {
         return res.status(400).json({
             message: "An error occured in registering new users",
@@ -36,3 +44,5 @@ const NewUsersRegistration = async(req, res) =>{
         })
     }
 }
+
+module.exports = NewUsersRegistration
