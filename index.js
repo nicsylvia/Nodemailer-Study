@@ -2,11 +2,11 @@ const express = require("express");
 
 const cors = require("cors");
 
-const port = environmentVariables.port
-
 const environmentVariables = require("./Config/secret");
 
 const { DBconnection, agenda } = require("./Config/DB");
+
+const port = environmentVariables.port
 
 const app = express();
 
