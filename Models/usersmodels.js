@@ -17,3 +17,7 @@ const UserSchema = mongoose.Schema({
         required: true
     },
 })
+
+const UserModels = model("Users", UserSchema)
+
+module.exports = UserModels
