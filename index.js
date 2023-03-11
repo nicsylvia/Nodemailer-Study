@@ -5,7 +5,7 @@ const cors = require("cors");
 const environmentVariables = require("./Config/secret");
 
 const { DBconnection, agenda } = require("./Config/DB");
-const { default: router } = require("./Routes/usersRouter");
+const router = require("./Routes/usersRouter");
 
 const port = environmentVariables.port
  
