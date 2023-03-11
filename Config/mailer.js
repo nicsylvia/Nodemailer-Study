@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-const SendinblueTransporter = require("nodemailer-sendinblue-transporter");
+const SendinblueTransporter = require("nodemailer-sendinblue-transport");
 
 const environmentVariables = require("./secret");
 
